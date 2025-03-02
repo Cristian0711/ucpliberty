@@ -3,7 +3,7 @@ import json
 from typing import Dict
 from urllib.parse import urljoin
 
-from request_manager import RequestManager
+from scraper.request_manager import RequestManager
 
 
 class VehiclesManager(RequestManager):

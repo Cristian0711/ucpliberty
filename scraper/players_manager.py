@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import List
 from urllib.parse import urljoin
 
-from request_manager import RequestManager
+from scraper.request_manager import RequestManager
 
 
 class PlayersManager(RequestManager):
@@ -15,7 +15,7 @@ class PlayersManager(RequestManager):
 
     def get_players(self) -> List[str]:
         try:
-            db_file = "online_db.json"
+            db_file = "database/online_db.json"
             online_json = self.make_request(self.online_endpoint)
             parsed_data = json.loads(online_json)
             players = parsed_data.get('users', [])
